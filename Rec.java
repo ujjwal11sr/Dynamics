@@ -8,12 +8,22 @@ public class Rec{
 	public static void main (String[] args) {
 		Scanner sc = new Scanner (System.in);
 		int t=sc.nextInt();
-		System.out.print(gcd(t));
+		int u=sc.nextInt() ;
+		System.out.print(gcd(t,u));
 	}
-	public static String gcd(int n){
-	    if(n==2){
-	        return ("gcd(int,int)");
-	    }
-	    return ("gcd(int,"+gcd(n-1));
+	public static String gcd(int n1, int n2){
+	    	
+		n1 = ( n1 > 0) ? n1 : -n1;
+		n2 = ( n2 > 0) ? n2 : -n2;
+
+		while(n1 != n2)
+		{
+		    if(n1 > n2)
+			n1 -= n2;
+		    else
+			n2 -= n1;
+		}
+		
+	    	return n1;
 	}
 }
